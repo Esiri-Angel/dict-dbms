@@ -85,14 +85,15 @@ def search_record(db: dict) -> None:
 def update_or_delete(db: dict) -> None:
     """Update a record's value or delete a record by key."""
     print_header("UPDATE / DELETE RECORD")
-    key = input("  Enter key to update or delete: ").strip()
+    while True:
+        key = input("  Enter key to update or delete: ").strip()
+        if key in db:
+            break
 
-    if key not in db:
         print(f"  [!] Key '{key}' not found.")
         retry = input("  Try again? (y/n): ").strip().lower()
-        if retry == 'y':
-            update_or_delete(db)
-        return
+        if retry != 'y':
+            return
 
     print(f"  Current  →  '{key}' : '{db[key]}'")
     print("  (1) Update value")
