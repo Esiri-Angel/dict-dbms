@@ -5,7 +5,7 @@
 ---
 
 ## Overview
-A command-line database system built entirely on Python's built-in dictionary data structure. Supports full CRUD operations with input validation, sorted display, and recursive retry on failed lookups.
+A command-line database system built entirely on Python's built-in dictionary data structure. Supports full CRUD operations with input validation, sorted display, and optional retry on failed lookups.
 
 ---
 
@@ -62,5 +62,5 @@ python dict_dbms.py
 - Input validation and duplicate key handling
 - `sorted()` with `lambda` key functions
 - Modular function design
-- Recursive retry pattern
+- Loop-based retry with a cancel option
 - Type hints (`dict`, `str`, `None`)
